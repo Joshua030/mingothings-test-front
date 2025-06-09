@@ -15,6 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DeviceDetailComponent } from './components/device-detail/device-detail.component';
+import { ChartModule } from 'primeng/chart';
+import { DeviceService } from './services/device/device.service';
+import { DeviceStoreItem } from './services/device/device-store-item';
 
 @NgModule({
   declarations: [HomeComponent, DeviceTabComponent, RefrigerantTabComponent, DeviceDetailComponent],
@@ -29,8 +32,9 @@ import { DeviceDetailComponent } from './components/device-detail/device-detail.
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
-     ButtonModule
+     ButtonModule,
+       ChartModule
   ],
-  providers: [RefrigerantService, RefrigerantStoreItem],
+  providers: [RefrigerantService, RefrigerantStoreItem, DeviceService, DeviceStoreItem],
 })
 export class HomeModule {}

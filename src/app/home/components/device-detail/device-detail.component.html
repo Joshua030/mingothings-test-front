@@ -1,1 +1,17 @@
-<p>device-detail works!</p>
+<div class="device-details">
+  <h2>Device: {{ device?.name }}</h2>
+  <p>Capacity: {{ device?.capacity }}</p>
+  <p>Refrigerant: {{ device?.refrigerantType?.name }}</p>
+</div>
+
+<div class="telemetry-filter">
+  <label for="year">Filter by Year</label>
+  <p-dropdown 
+    [options]="years" 
+    [(ngModel)]="selectedYear"
+    (onChange)="loadTelemetry(selectedYear)"
+    placeholder="Select Year">
+  </p-dropdown>
+</div>
+
+<p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>

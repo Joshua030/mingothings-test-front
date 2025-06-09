@@ -15,4 +15,12 @@ export class DeviceService {
   createDevice(data: Partial<Device>): Observable<any> {
     return this.http.post('http://localhost:8000/api/things', data);
   }
+
+  getDeviceById(id: string) {
+  return this.http.get<any>(`http://localhost:8000/api/things/${id}`);
+}
+
+getTelemetryByYear(id: string, year: number) {
+  return this.http.get<any>(`http://localhost:8000/api/things/${id}/${year}`);
+}
 }
