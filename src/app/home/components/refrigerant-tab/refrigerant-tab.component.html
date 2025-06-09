@@ -1,0 +1,27 @@
+<div class="refrigerant-header">
+  <h3>Refrigerants</h3>
+  <p-dropdown 
+    [options]="years" 
+    [(ngModel)]="selectedYear"
+    placeholder="Select Year"
+    styleClass="year-selector"
+    [showClear]="true">
+  </p-dropdown>
+</div>
+
+<p-table [value]="refrigerants">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>PT Factor</th>
+      <th>PT Offset</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-r>
+    <tr>
+      <td>{{ r.name }}</td>
+      <td>{{ r.ptFactor }}</td>
+      <td>{{ r.ptOffset }}</td>
+    </tr>
+  </ng-template>
+</p-table>
