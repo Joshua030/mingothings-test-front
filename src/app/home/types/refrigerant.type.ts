@@ -4,3 +4,9 @@ export interface Refrigerant {
   ptFactor: number;
   ptOffset: number;
 }
+
+export interface Refrigerants {
+  status: string;
+  results: string,
+  data: Refrigerant[]
+}

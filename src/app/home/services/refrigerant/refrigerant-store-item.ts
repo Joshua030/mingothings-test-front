@@ -13,7 +13,7 @@ export class RefrigerantStoreItem extends StoreItem<Refrigerant[]> {
 
   loadRefrigerants() {
     this.refrigerantService.getAllRefrigerants().subscribe(refrigerants => {
-      this.setValue(refrigerants);
+      this.setValue(refrigerants.data);
     });
   }
 

@@ -11,12 +11,13 @@ import { RefrigerantService } from './services/refrigerant/refrigerant.service';
 import { RefrigerantStoreItem } from './services/refrigerant/refrigerant-store-item';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
-import { FormsModule } from '@angular/forms';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { DeviceDetailComponent } from './components/device-detail/device-detail.component';
 
 @NgModule({
-  declarations: [HomeComponent, DeviceTabComponent, RefrigerantTabComponent],
+  declarations: [HomeComponent, DeviceTabComponent, RefrigerantTabComponent, DeviceDetailComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -26,6 +27,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     TableModule,
     FormsModule,
+    ReactiveFormsModule,
+    InputTextModule,
+     ButtonModule
   ],
   providers: [RefrigerantService, RefrigerantStoreItem],
 })
